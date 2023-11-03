@@ -20,6 +20,8 @@
 .descriptions{
   display: flex;
   justify-content: center;
+  width:70%;
+  margin:0 auto; 
   /* margin-left: 290px; */
   gap: 10%;
 
@@ -228,12 +230,14 @@
 
     /* CSS for the button */
     .select-button {
-      background-color: #eef7ee;
-      color: rgb(7, 7, 7);
+      background-color: #5d3ba7;
+      color: #ffff;
+      font-weight: 800px;
       border: none;
-      padding: 10px;
+      padding: 10px 20px;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 20px;
     }
     .interiordiv {
       display: flex;
@@ -298,7 +302,10 @@
      width: 30px;
     }
     .select-button:hover{
-      background-color: #d6e8d6;
+      background-color: #fff;
+      color: #5d3ba7;
+      border: 1px solid ;
+      border-color:#5d3ba7 ;
     }
      /* Media Query for 720px screens */
 /* Media Query for 720px screens */
