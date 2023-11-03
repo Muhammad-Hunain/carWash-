@@ -19,11 +19,11 @@
 }
 .descriptions{
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   width:70%;
   margin:0 auto; 
   /* margin-left: 290px; */
-  gap: 10%;
+  /* gap: 10%; */
 
   
 }
@@ -38,9 +38,10 @@
 .count h4{
   font-size: 21px;
   margin-top: -36px;
+  margin-left: 50px;
 }
 .count:nth-child(3){
-  margin-left: 3%;
+  /* margin-left: 3%; */
 }
 .hea h2 {
   text-align: center;
@@ -49,6 +50,7 @@
   color: rgb(112, 43, 203);
   font-style: sans-serif;
   margin-top: -5px;
+
  
 }
 
@@ -337,9 +339,7 @@
     margin-left: 0px;
     display: flex;
     justify-content: none;
-    
-  
-   
+
   }
   .count{
     gap:10px
