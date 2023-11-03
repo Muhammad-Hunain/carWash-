@@ -38,7 +38,7 @@
 .count h4{
   font-size: 21px;
   margin-top: -36px;
-  margin-left: 50px;
+  margin-left: 25px;
 }
 .count:nth-child(3){
   /* margin-left: 3%; */
@@ -50,6 +50,7 @@
   color: rgb(112, 43, 203);
   font-style: sans-serif;
   margin-top: -5px;
+  margin-left: 3px;
 
  
 }
