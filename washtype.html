@@ -37,7 +37,7 @@
         box-shadow: 0px 0px 10px 0px #c1bfbf;
       }
       .maindiv:nth-child(1) {
-        margin-left: 220px;
+        /* margin-left: 220px; */
       }
       .wash-type-container {
         margin-left: 30px;
@@ -46,9 +46,9 @@
         margin-top: 20px;
         height: 190px;
         width: 120px;
-        margin-left: 38PX;
+        margin-left: 38px;
       }
-    
+
       .wash-type-container p {
         margin-left: 40px;
         font-size: 22px;
@@ -90,12 +90,13 @@
         background-color: #6941bf;
         color: #eef7ee;
       }
-    
+
       .flexdiv {
         display: flex;
         flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
       }
-    
 
       .wash-type-checkbox {
         width: 20px;
@@ -178,12 +179,11 @@
         color: var(--form-control-disabled);
         cursor: not-allowed;
       }
-    .wash-type-container p{
+      .wash-type-container p {
         font-size: 34px;
         font-weight: bold;
         margin-top: 20px;
-    }
-   
+      }
 
       /* Media Query for 480px screens */
       @media screen and (max-width: 480px) {
@@ -193,11 +193,10 @@
           display: flex;
           text-align: center;
         }
-       input[type="checkbox"]::before{
-        height: 10px;
-        width: 10px;
-
-       }
+        input[type="checkbox"]::before {
+          height: 10px;
+          width: 10px;
+        }
         .button-container p {
           margin-left: 140px;
           font-size: 18px;
@@ -260,8 +259,8 @@
           font-size: 16px;
         }
         .flexdiv {
-            display: flex;
-            flex-direction: column;
+          display: flex;
+          flex-direction: column;
         }
         .maindiv {
           width: 70%;
@@ -286,7 +285,6 @@
           font-size: 29px;
           margin-top: 40px;
         }
-       
 
         .checks {
           margin-left: 40px;
@@ -322,18 +320,12 @@
   <body>
     <div class="button-container">
       <button class="select-button" id="select-button">&lt</button>
-     
-     
     </div>
-    <h1 style="text-align: center;" id="mainheading"></h1>
+    <h1 style="text-align: center" id="mainheading"></h1>
     <div class="flexdiv">
       <div class="maindiv">
         <div class="wash-type-container">
-          <img
-            class="wash-type-image"
-            src="car.png"
-            alt="Wash Type Image"
-          />
+          <img class="wash-type-image" src="car.png" alt="Wash Type Image" />
           <p class="wash-type-price">​<span id="wash-type-price"></span></p>
         </div>
         <div class="checks">
@@ -345,7 +337,6 @@
                 class="wash-type-checkbox"
                 data-category="Exterior"
                 data-name="Lavado simple"
-               
                 disabled
               />
 
@@ -360,7 +351,7 @@
                 disabled
               />Lavado de ventanas</label
             >
-          
+
             <label
               ><input
                 type="checkbox"
