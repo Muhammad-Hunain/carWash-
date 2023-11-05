@@ -76,7 +76,7 @@
       }
       .checks button {
         margin-left: 30px;
-        margin-top: 70px;
+        margin-top: 30px;
         height: 30px;
         width: 110px;
         background-color: #ffffff;
@@ -165,8 +165,8 @@
         transition: 120ms transform ease-in-out;
         box-shadow: inset 1em 1em var(--form-control-color);
         /* Windows High Contrast Mode */
-        background-color: purple;
-        border: 1px solid purple;
+        background-color: #6503e7;
+        border: 1px solid #6503e7;
       }
 
       input[type="checkbox"]:checked::before {
@@ -361,6 +361,15 @@
                 disabled
               />Secado</label
             >
+            <label
+            ><input
+              type="checkbox"
+              class="wash-type-checkbox"
+              data-category="Exterior"
+              data-name="Includio"
+              disabled
+            />Includio</label
+          >
           </div>
 
           <button class="wash-type-add-button" id="exterior-add-button">
@@ -386,6 +395,7 @@
               />Limpieza con aspiradora</label
             >
 
+
             <label
               ><input
                 type="checkbox"
@@ -395,6 +405,16 @@
                 disabled
               />Lavado de ventanas</label
             >
+            <label
+            ><input
+              type="checkbox"
+              class="wash-type-checkbox"
+              data-category="Interior"
+              data-name="Includio"
+              disabled
+            />Includio</label
+          >
+           
             <label hidden="true"></label>
             <label hidden="true"></label>
           </div>
@@ -413,13 +433,29 @@
       document
         .getElementById("select-button")
         .addEventListener("click", function () {
+          
+          localStorage.removeItem("selectedChecklists");
           window.location.href = "home.html";
         });
-      document
-        .getElementById("nextButton")
-        .addEventListener("click", function () {
-          window.location.href = "interior.html";
-        });
+        document.getElementById("nextButton").addEventListener("click", function () {
+  const data = JSON.parse(localStorage.getItem("selectedChecklists")); // Parse the data as JSON
+  console.log("mydata", data);
+  const washType = data.washType;
+
+  if (data) {
+    if (data.interior && data.interior.length === 0) {
+      window.location.href = "exterior.html";
+    } else if (data.exterior && data.exterior.length === 0) {
+      window.location.href = "interior.html";
+    } else {
+      // If both interior and exterior have items, you can navigate to checkout.html
+      window.location.href = "interior.html";
+    }
+  } else {
+    window.location.href = `washtype.html?type=${washType}`;
+  }
+});
+
     </script>
   </body>
 </html>

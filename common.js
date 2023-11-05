@@ -65,9 +65,9 @@
         console.log("Wash Type:", washType);
 
         const washTypePrices = {
-            "small-car": 3.95,
+            "small-car": 4.95,
             "medium-car": 4.95,
-            "big-car": 5.95
+            "big-car": .95
         };
 
         const washTypePriceElements = document.querySelectorAll("#wash-type-price");
@@ -184,13 +184,20 @@
                 const service = totalPrice * 0.25;
                 const lastprice = totalPrice + service;
               
-                
-               
+                 console.log(selectedChecklists.interior.length)
+               if(selectedChecklists.interior.length != 0){
+                document.getElementById("summary-price").textContent = `€ ${interiorPrice.toFixed(2)}`;
+               }else{
+                document.getElementById("interior").textContent = "";
+               }
 
-                document.getElementById("interior-price").textContent = `Interior Price: € ${interiorPrice.toFixed(2)}`;
-                document.getElementById("exterior-price").textContent = `Exterior Price: € ${exteriorPrice.toFixed(2)}`;
-                document.getElementById("service-price").textContent = `Service Price: € ${service.toFixed(2)}`;
-                document.getElementById("total-price").textContent = `Total Price: € ${lastprice.toFixed(2)}`;
+                if(selectedChecklists.exterior.length != 0){
+                document.getElementById("exteriorsummary-price").textContent = `€ ${exteriorPrice.toFixed(2)}`;
+                }else{
+                    document.getElementById("exterior").textContent = "";
+                }
+                document.getElementById("service-price").textContent = `€ ${service.toFixed(2)}`;
+                document.getElementById("total-price").textContent = `€ ${lastprice.toFixed(2)}`;
             }
 
             // Call the calculateTotalPrice function
@@ -198,24 +205,41 @@
             calculateTotalPrice();
             if (selectedOptions.length > 0) {
                 console.log("Selected Options:", selectedOptions);
-                const selectedOptionsDisplay = document.querySelector("#selected-options");
+                const selectedOptionsDisplay = document.querySelector("#extra-proce");
                 selectedOptionsDisplay.innerHTML = '';
-        
+            
                 const groupedOptions = groupOptionsByCategory(selectedOptions);
+                
                 Object.keys(groupedOptions).forEach(category => {
                     
-        
-                    const optionsList = document.createElement("ul");
                     groupedOptions[category].forEach(option => {
-                        const optionItem = document.createElement("p");
-                        optionItem.textContent = `${option.name} ___ € ${option.price.toFixed(2)}`;
-                        optionsList.appendChild(optionItem);
-                        optionsList.style.gap = "10px";
+                       
+                        
+
+                        const labelElement = document.createElement("div");
+                        labelElement.className = "summary-label";
+                        labelElement.textContent = option.name;
+            
+                        const priceElement = document.createElement("div");
+                        priceElement.className = "summary-price";
+                        priceElement.textContent = `€ ${option.price.toFixed(2)}`;
+            
+                        // Create a row div to contain the label and price
+                        const optionRow = document.createElement("div");
+                        optionRow.className = "summary-row";
+            
+                        // Append the label and price to the row
+                        optionRow.appendChild(labelElement);
+                        optionRow.appendChild(priceElement);
+            
+                        // Append the row to the selectedOptionsDisplay
+                        selectedOptionsDisplay.appendChild(optionRow);
+                        selectedOptionsDisplay.style.display ="flex";
+                        selectedOptionsDisplay.style.flexDirection ="column";
                     });
-                    selectedOptionsDisplay.appendChild(optionsList);
-                
                 });
             }
+            
         
         });
 

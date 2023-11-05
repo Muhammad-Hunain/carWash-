@@ -10,18 +10,31 @@
   text-decoration-color: #6503e7;
 }
 
-
-.hea p {
+.hea{
   text-align: center;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.hea p {
+  margin: 0 auto;
+ 
+  padding: 10px;
   font-size: 24px;
   font-weight: 800;
  
+}
+.hea img{
+  
+  width: 25%;
+  height: 25%;
 }
 .descriptions{
   display: flex;
   justify-content: space-around;
   width:70%;
   margin:0 auto; 
+ gap: 70px;
   /* margin-left: 290px; */
   /* gap: 10%; */
 
@@ -32,7 +45,7 @@
   font-size: 90px;
   margin-top: -2px;
   font-weight: 700;
-  color: #7025d2;
+  color: #664fd4;
 
 }
 .count h4{
@@ -43,38 +56,33 @@
 .count:nth-child(3){
   /* margin-left: 3%; */
 }
-.hea h2 {
-  text-align: center;
-  font-size: 60px;
-  font-weight: 900;
-  color: rgb(112, 43, 203);
-  font-style: sans-serif;
-  margin-top: -5px;
-  margin-left: 3px;
 
- 
-}
 
 .hea img{
-  margin-left: 45%;
+  
   margin-top: 3%;
-  width: 10%;
-  height: 10%;
+  width: 15%;
+  height: 15%;
 }
 .wash p{
   margin-top: -19px;
-  margin-left: 45%;
+  text-align: center; /* Center align the text */
   font-size: 18px;
 }
-.infoclass{
+.infoclass {
   display: flex;
   margin-top: -8px;
-  margin-left: 15%;
+  justify-content: center;
 }
+
+
 .infoclass img{
   margin-top: 15px;
   height: 25px;
   width: 20px;
+}
+.infoclass span{
+  color:#664fd4 ;
 }
 
 
@@ -92,9 +100,7 @@
   background-color: white;
   border-radius: 10px;
   margin-bottom: 1%}
-.wash-container:nth-child(1) {
-   /* margin-left: 15%; */
-}
+
 .wash-container h2 {
   text-align: center;
   font-size: 28px;
@@ -102,14 +108,14 @@
   margin-top: 30px;
 }
 .wash-container span {
-  color: #a021a0;
+  color: #664fd4;
 }
 
 .wash-image {
   position: relative; /* Set the container's position to relative */
   width: 200px; /* Adjust the container's width as needed */
   height: 200px; /* Adjust the container's height as needed */
-  margin-left: 60px;
+  margin-left: 20%;
 }
 
 .wash-image img {
@@ -137,7 +143,7 @@
   text-align: center;
 }
 .buttonlearn button{
-    background: rgb(112, 64, 224);
+    background: #664fd4;
     color: white;
     height: 35px;
     width: 160px;
@@ -164,12 +170,12 @@
   color: white;
 }
      .nextbtn button{
-         margin-left: 40%;
+         margin-left: 42%;
          margin-top: 30px;
          height: 45px;
          width: 300px;
          font-size: 20px;
-         background-color: rgb(91, 71, 180);
+         background-color: #664fd4;
          color: white;
          border: solid 1px ;
          padding: 5px;
@@ -211,7 +217,8 @@
      }
      .contactos a{
       display: flex;
-      text-decoration: none;
+      text-decoration: underline;
+      text-decoration-color: black;
       color: black;
       
      }
@@ -337,13 +344,15 @@
       flex-direction: column;
   }
   .descriptions{
-    margin-left: 0px;
+    
     display: flex;
     justify-content: none;
 
   }
   .count{
-    gap:10px
+ 
+    margin-left: -3%;
+    
   }
   .count h1{
     font-size: 60px;
@@ -442,11 +451,21 @@ display: none;
 .extra {
     margin-right: 10%;
 }
+.hea img{
+  margin-top: 3%;
+  width: 30%;
+  height: 30%;
+}
 
 }
 
 /* Media Query for 480px screens */
 @media screen and (max-width: 480px) {
+  .hea img{
+    margin-top: 3%;
+    width: 30%;
+    height: 30%;
+  }
   .wash-container {
   margin-bottom: 40px;
       height: 395px; /* Allow the container's height to adjust */
@@ -488,14 +507,25 @@ display: none;
     width: 200px;
   }
   .descriptions img{
-    margin-left: 0px;
+  
     width: 100px;
     height: 100%;
   }
-  .descriptions{
+  .descriptions {
     display: flex;
     flex-direction: column;
-  }
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.count h1{
+  text-align: center;
+}
+.count h4{
+  text-align: center;
+  font-size: 18px;
+}
+
   .footer{
     margin-left: 5px;
     margin-right: 20px;

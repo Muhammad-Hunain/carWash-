@@ -23,7 +23,7 @@
           <p>Extra Dirty</p>
           <div class="priceadd">
             <p>€ 1.99</p>
-            <button class="add-option" data-category="Exterior (Extras)" data-name="Extra Dirty" data-price="1.99">Add</button>
+            <button class="add-option" data-category="Exterior (Extras)" data-name="Extra Dirty (exterior)" data-price="1.99">Add</button>
           </div>
         </div>
       </div>
@@ -63,7 +63,25 @@
           window.location.href = "credential.html";
       });
       document.getElementById("select-button").addEventListener("click", function() {
-          window.location.href = "interior.html";
+        const data = JSON.parse(localStorage.getItem("selectedChecklists")); // Parse the data as JSON
+          console.log("mydata", data);
+          const washType = data.washType;
+         
+          if (data) {
+           if (data.exterior && data.interior.length === 0) {
+            localStorage.removeItem("selectedChecklists");
+            localStorage.removeItem("selectedOptions");
+            window.location.href = `washtype.html?type=${washType}`;
+
+            } else {
+             localStorage.removeItem("selectedOptions")
+              window.location.href = "interior.html";
+            }
+          } else {
+            localStorage.removeItem("selectedOptions")
+            window.location.href = `washtype.html?type=${washType}`;
+
+          }
       });
   </script>
      <script src="common.js"></script>
